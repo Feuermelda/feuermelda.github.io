@@ -67,3 +67,80 @@ nav {
     font-weight: bold;
     text-decoration: underline;
 }
+
+
+
+@media (max-width: 600px) {
+    body {
+        background-color: #a19833;
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: #b80000;
+        /* #851738 save this color for later cause it's really beautiful */
+        text-align: center;
+    }
+
+    .navbar li a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.75rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 2000px) {
+
+
+    .section-title {
+        font-size: 1.8rem;
+        text-align: center;
+
+        margin-bottom: 1rem;
+    }
+
+    .card-container {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+    }
+
+    .card {
+        background-color: #6f9e24;
+        border: 2px solid #1e4612;
+        border-radius: 10px;
+        padding: 1rem;
+        width: 220px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card-title:hover {
+        color: #ffe66d;
+    }
+
+    .card-img {
+        width: 100%;
+        object-fit: contain;
+        max-height: 500;
+        margin: auto 0;
+    }
+
+    #upcoming {
+        margin-bottom: 3rem;
+    }
+}
