@@ -70,12 +70,39 @@
                 <h3 class="card-title">Cacti 2025</h3>
                 <img class="card-img" src="images/Cacti_2025.jpeg" alt="Image of Cacti 2025">
             </div>
-
         </div>
-
-
     </section>
-
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <form action="#">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder=" " required>
+                <label for="name">Your Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="mail" placeholder=" " required>
+                <label for="email">Email Address</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" rows="4" name="msg" placeholder=" " required></textarea>
+                <label for="message">Your Message</label>
+            </div>
+            <div class="form-group">
+                <select name="feedback" id="feedback" placeholder=" " required>
+                    <option value="" disabled selected hidden>Please be honest</option>
+                    <option value="style">My style</option>
+                    <option value="paths">My learning paths</option>
+                    <option value="cat">My cat</option>
+                    <option value="dev">My progress in Computer Science</option>
+                    <option value="bike">My Motorcycle</option>
+                    <option value="name">My name and my love for eels</option>
+                </select>
+                <label for="feedback">What did you like best about my Page?</label>
+                </select>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
     <footer>
         <p>Made with caffeine, chaos, and curiosity. Some projects built with ChatGPT's help.</p>
     </footer>
