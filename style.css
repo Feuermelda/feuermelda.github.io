@@ -1,25 +1,36 @@
-* {
-    box-sizing: border-box;
+/* ========== Root Variables ========== */
+:root {
+    /*bg, text, shadow, radius*/
+    --bg: #311f09;
+    --text: #333;
     --accent-green: #648126;
     /* #68832c */
     --card-bg: #c19e77;
     /* #a77d4a */
+    --shadow: rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+}
+
+
+/* ========== Base Styles ========== */
+* {
+    box-sizing: border-box;
 }
 
 html {
-    background-color: #311f09;
+    background-color: var(--bg);
 }
 
 body {
     font-family: 'Segoe UI', 'Verdana', sans-serif;
     background: #af8756;
-    color: #333;
+    color: var(--text);
     margin: 2rem auto;
     max-width: 800px;
     padding: 1rem;
     border: 2px ridge #382917;
-    border-radius: 10px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 4px var(--shadow);
 
 }
 
@@ -36,21 +47,13 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-a {
-    color: #b7cc4a;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #fff48f;
-    text-decoration: none;
-}
-
 nav {
     margin-top: 1rem;
     text-align: center;
 }
 
+
+/* ========== Layout ========== */
 .navbar {
     list-style: none;
     padding: 0;
@@ -67,6 +70,21 @@ nav {
     transition: color 0.2s ease;
 }
 
+a {
+    color: #b7cc4a;
+    text-decoration: none;
+}
+
+
+/* ========== Components ========== */
+
+
+/* ========== Hover / Animations ========== */
+a:hover {
+    color: #fff48f;
+    text-decoration: none;
+}
+
 .navbar li a:hover {
     color: #426436;
 }
@@ -77,7 +95,8 @@ nav {
 }
 
 
-
+/* ========== Media Queries ========== */
+/* Mobile Adjustments */
 @media (max-width: 600px) {
     body {
         background-color: #a19833;
@@ -102,7 +121,10 @@ nav {
     }
 }
 
-@media (max-width: 2000px) {
+
+/* PC Monitors */
+
+@media (min-width: 1200px) {
 
 
     .section-title {
@@ -235,6 +257,7 @@ nav {
     }
 
     .link-container {
+        display: block;
         text-align: center;
         margin: 2rem 0;
         font-size: 1.5rem;
@@ -242,47 +265,19 @@ nav {
         letter-spacing: 0.05rem;
         background-color: #9c784b;
         text-transform: capitalize;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .link-containter a {
-        display: inline-block;
+        box-shadow: 0 1px 4px var(--shadow);
+        color: #b7cc4a;
         text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .link-container:hover {
         background-color: #9db83d;
+        color: #fff48f;
     }
 
-    /*a.project-link {
-        display: block;
-        font-size: 2rem;
-        margin-top: 1rem;
-        padding: 0.5rem 1rem;
-        background-color: #999;
-        color: #faf214;
-        text-decoration: none;
-        border-radius: 0.5rem;
-        transition: background-color 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        letter-spacing: 0.05rem;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    a.project-link:hover {
-        background-color: #55cba7;
-        color: #88acb2;
-        text-decoration: none;
-    }
-
-    a.project-link:focus {
-        outline: 2px solid #45bba1;
-        outline-offset: 3px;
-        text-decoration: none;
-    }*/
 
 }
+
+
+/* Tablet and PC Monitors */
