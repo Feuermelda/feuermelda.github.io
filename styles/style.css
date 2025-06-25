@@ -124,7 +124,7 @@ a:hover {
 
 /* PC Monitors */
 
-@media (max-width: 2000px) {
+@media (min-width: 1200px) {
 
 
     .section-title {
