@@ -47,9 +47,25 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
+h3 {
+    font-size: 1.25rem;
+    color: #3f6d2d;
+    text-align: center;
+}
+
 nav {
     margin-top: 1rem;
     text-align: center;
+}
+
+#feedback-response {
+    font-style: italic;
+    border: 2px solid green;
+    border-radius: var(--radius);
+    padding: 1rem;
+    background-color: #cea069;
+    box-shadow: 0 2px 2px var(--shadow);
+    margin-top: 2rem;
 }
 
 
@@ -181,11 +197,13 @@ a:hover {
         max-width: 500px;
         margin: 2rem auto;
         padding: 1rem;
+
     }
 
     .form-group {
         position: relative;
         margin-bottom: 2rem;
+
     }
 
     .form-group input,
@@ -198,6 +216,7 @@ a:hover {
         border-radius: 5px;
         resize: vertical;
         background-color: #e4cbb0;
+
     }
 
     .form-group label {
@@ -220,6 +239,7 @@ a:hover {
         top: 0.2rem;
         font-size: 0.75rem;
         color: #420;
+
     }
 
     button[type="submit"] {
@@ -231,6 +251,7 @@ a:hover {
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+
     }
 
     button[type="submit"]:hover {
@@ -239,10 +260,13 @@ a:hover {
 
     .form-group option {
         border: 1.5px groove #382917;
+
+
     }
 
     .form-group option:hover {
         background-color: #420;
+
     }
 
 
