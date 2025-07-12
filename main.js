@@ -52,3 +52,41 @@ feedbackSelect.addEventListener("change", function () {
     }
     feedbackResponse.innerText = response;
 });
+
+// toggle mode
+
+const eyebleachBtn = document.getElementById("eyebleach-toggle");
+
+eyebleachBtn.addEventListener("click", () => {
+
+    const body = document.body;
+
+    if (!body.classList.contains("eyebleach-mode")) {
+        const confirmed = confirm("WARNING: Eyebleach may be required.\nProceed with caution?");
+
+        if (confirmed) {
+            body.classList.toggle("eyebleach-mode");
+
+            if (navigator.userAgent.includes("Firefox")) {
+                document.documentElement.classList.add("eyebleach-firefox");
+            }
+        } else {
+            console.log("Coward.");
+        };
+
+    } else {
+        body.classList.remove("eyebleach-mode");
+        document.documentElement.classList.remove("eyebleach-firefox");
+    }
+
+    eyebleachBtn.innerText = document.body.classList.contains("eyebleach-mode")
+        ? "Exit Eyebleach Mode"
+        : "Eyebleach Mode";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+
+    })
+});
