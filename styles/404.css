@@ -1,0 +1,74 @@
+body {
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff6f61;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.back-home {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #5fcf80;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.back-home:hover {
+    transform: scale(1.05);
+    background-color: #47b96a;
+}
+
+.spider {
+    width: 120px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    animation: bounce 2s infinite;
+}
+
+.spider-web {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    /* web's width*/
+    height: 100px;
+    /* optional */
+    background-image: url("web.png");
+    /* design later via gimp */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 800;
+    /* to keep it on top */
+    right: -20px;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}

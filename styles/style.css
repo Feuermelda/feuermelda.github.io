@@ -219,6 +219,49 @@ select {
     aspect-ratio: 4 / 3;
 }
 
+.mascot-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.footer-mascot {
+    height: 256px;
+    image-rendering: pixelated;
+    /* keeps pixel art crisp */
+    transition: transform 0.3s ease;
+}
+
+.character-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 30px;
+}
+
+.speech-bubble {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--form-bg);
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    width: max-content;
+    max-width: 180px;
+    text-align: center;
+    box-shadow: 2px 2px 4px var(--shadow);
+    z-index: 10;
+}
+
+
 /* ========== Components ========== */
 form {
     max-width: 500px;
@@ -335,6 +378,15 @@ html.eyebleach-firefox {
     color: var(--accent-brown);
     border: 1px solid var(--card-bg);
     transition: background-color 0.2s ease;
+}
+
+
+.character-wrapper:hover .footer-mascot {
+    transform: scale(1.02);
+}
+
+.character-wrapper:hover .speech-bubble {
+    opacity: 1;
 }
 
 /* ========== Media Queries ========== */
