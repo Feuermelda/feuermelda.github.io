@@ -9,6 +9,11 @@ body {
 .container {
     max-width: 600px;
     margin: auto;
+    position: fixed;
+    top: 350px;
+    right: 250px;
+    z-index: 999;
+    pointer-events: none;
 }
 
 h1 {
@@ -42,23 +47,39 @@ p {
     margin-bottom: 2rem;
     margin-top: 2rem;
     animation: bounce 2s infinite;
+    position: absolute;
+    right: -55px;
+    top: 300px;
+}
+
+.spider-thread-bounce {
+    position: absolute;
+    top: -350px;
+    right: -55px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.spider-thread {
+    width: 6px;
+    height: 350px;
+    background-color: gray;
+    margin: 0 auto;
 }
 
 .spider-web {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
-    width: 100px;
+    width: 200px;
     /* web's width*/
-    height: 100px;
+    height: 200px;
     /* optional */
-    background-image: url("web.png");
+    background-image: url("../assets/images/spider_web.png");
     /* design later via gimp */
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: 800;
+    z-index: 998;
     /* to keep it on top */
-    right: -20px;
 }
 
 @keyframes bounce {
@@ -69,6 +90,6 @@ p {
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-15px);
     }
 }
