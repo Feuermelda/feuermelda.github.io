@@ -7,6 +7,7 @@ body {
 }
 
 .container {
+
     max-width: 600px;
     margin: auto;
     position: fixed;
@@ -50,6 +51,7 @@ p {
     position: absolute;
     right: -55px;
     top: 300px;
+
 }
 
 .spider-thread-bounce {
@@ -64,12 +66,14 @@ p {
     height: 350px;
     background-color: gray;
     margin: 0 auto;
+
 }
 
 .spider-web {
     position: fixed;
     top: 0;
     right: 0;
+
     width: 200px;
     /* web's width*/
     height: 200px;
@@ -91,5 +95,41 @@ p {
 
     50% {
         transform: translateY(-15px);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .message {
+        margin-top: 12rem;
+    }
+
+    .spider-wrapper {
+        width: 120px;
+        height: 180px;
+        top: 20px;
+        right: 10px;
+    }
+
+    .spider-web {
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+    }
+
+    .spider-thread-bounce {
+        top: -350px;
+        right: -152px;
+    }
+
+    .spider-thread {
+        height: 200px;
+        width: 3px;
+    }
+
+    .spider {
+        width: 90px;
+        top: 110px;
+        left: -45px;
     }
 }
