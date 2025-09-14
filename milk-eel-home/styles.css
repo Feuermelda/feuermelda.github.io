@@ -1,0 +1,945 @@
+/* ========== Root Variables ========== */
+:root {
+    --bg: #fff;
+    --bg2: #e0f7fa;
+    --bg3: #e0f7ff;
+    --text: #222;
+    --text2: #f1f1f1;
+    --text3: #024963;
+    --h1: #004d7a;
+    --h2: #007199;
+    --accent: #4882a3;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+    --footer: #507d99;
+    --border: #075273;
+    --border2: #e0e0e0;
+    --border3: #00bfff;
+    --conspBg: #334;
+    --conspLink: #7979d3;
+    --transition: background-color 0.3s ease;
+    --hoverLink: #2c28ad;
+    --hoverBtn: #005c7a;
+    --hoverText: #9a7ee7;
+    --label: #666;
+    --font: 'Segoe UI', sans-serif;
+}
+
+body.hacker-mode {
+    --bg: #121212;
+    --bg2: #162700;
+    --bg3: #123456;
+    --text: #00ff00;
+    --text2: #39115a;
+    --text3: #098a09;
+    --h1: #00ff66;
+    --h2: #00af23;
+    --accent: #33ff55;
+    --shadow: rgba(255, 255, 255, 0.2);
+    --radius: 10px;
+    --footer: #69a764;
+    --border: #99d100;
+    --border2: #5a1129;
+    --border3: #b80a30;
+    --conspBg: #7000a3;
+    --conspLink: #3df9ff;
+    --transition: background-color 0.3s ease;
+    --hoverLink: #acdfab;
+    --hoverBtn: #51ff00;
+    --hoverText: #74032e;
+    --label: #7bff00;
+    --font: 'Courier New', monospace, 'Lucida Console';
+}
+
+/* ========== Base Styles ========== */
+* {
+    box-sizing: border-box;
+    /* "When I say width: 100%, I mean including padding and border — don’t add it on top." */
+}
+
+body {
+    font-family: var(--font);
+    /* sets font to something readable*/
+    background-color: var(--bg);
+    /* light pastel background on whole page */
+    color: var(--text);
+    /*short for #333333 in hex #RRGGBB*/
+    /* set default text color */
+    max-width: 800px;
+    /* 800px */
+    /* keeps content from stretching too wide on big screens, 800 or 900px super common for readable content, keeps paragraphs from stretching too wide on large monitors*/
+    margin: 2rem auto;
+    /* centers whole page horizontally, Root EM - scales with root font size, 1rem = 16px, in .css -> html {font-size: e.g.20px oder in %} -> dann 1rem = 20px; makes layout responsive, easier to scale across devices than hard pixels */
+    padding: 1rem;
+    /* adds breathing room inside the body */
+    border: 2px dashed var(--border2);
+    /* adds a fun dashed frame around your content, also use solid, dotted, etc. */
+    border-radius: var(--radius);
+    /* rounds the corners */
+    box-shadow: 0 0 12px var(--shadow);
+    /* adds a soft glow behind the whole container, x-offset y-offset blur-radius color; x - horizontal shift y - vertical shift blur - the higher, the softer, alpha 0.1 = 10% opaque or 90% transparent */
+}
+
+h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    color: var(--h1);
+    margin-bottom: 0.5rem;
+    /* adds space between the headline and the next element <p>*/
+}
+
+h2 {
+    font-size: clamp(1rem, 4vw, 2rem);
+    color: var(--h2);
+    margin-top: 2rem;
+    /* adds space before the heading so it's not crowded by the previous section*/
+    margin-bottom: 0.5rem;
+    /* keeps the space between heading and content readable*/
+}
+
+ul {
+    padding-left: 1.5rem;
+    /* indents the bullet list a little from the left*/
+    line-height: 1.7;
+    /* increases vertical spacing between list items (default is ~1.2-1.5)*/
+    margin-bottom: 1.5rem;
+    /* adds space after the whole list before the next block of content */
+
+}
+
+footer {
+    font-size: 0.75rem;
+    color: var(--footer);
+    border-top: solid;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    /* adds spacing above the nav bar*/
+    margin-top: 1rem;
+    text-align: center;
+}
+
+section#tags {
+    background-color: var(--bg2);
+    padding: 1.5rem;
+    border: 1.5px groove var(--border);
+}
+
+#tags {
+    text-align: center;
+}
+
+
+#tags h2 {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+#tags ul {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
+    /* or try 100% for full width */
+    display: inline-block;
+    text-align: left;
+    overflow-x: auto;
+    width: auto;
+
+
+}
+
+#tags li {
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 0.25rem;
+    white-space: nowrap;
+
+
+}
+
+#tags li a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: bold;
+    white-space: nowrap;
+    /* prevents line breaks from wrapping text */
+    display: inline-block;
+    /* makes the link behave like a box so styling applies consistently */
+}
+
+#greeting {
+    display: block;
+    /* to center */
+    width: fit-content;
+    /* to center */
+    margin: 0 auto;
+    /* to center */
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 4px var(--shadow);
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg2);
+    cursor: default;
+    font-style: italic;
+    font-size: 1.2rem;
+
+}
+
+
+#mood-checker {
+    margin: 2rem 0;
+    background-color: var(--bg2);
+    padding: 1rem;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px var(--shadow);
+    text-align: center;
+}
+
+#mood-checker h2 {
+    color: var(--h2);
+    margin-bottom: 0.5rem;
+}
+
+#mood-checker select {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--bg);
+    color: var(--text);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+#mood-response {
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: var(--text3);
+}
+
+#compliment {
+    text-align: center;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    border: 3px dotted var(--accent);
+    border-radius: var(--radius);
+    background-color: var(--bg);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+#compliment-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--accent);
+    color: var(--text2);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#compliment-result {
+    font-style: italic;
+    margin-top: 1rem;
+    color: var(--text3);
+}
+
+#hacker-toggle {
+
+    background-color: var(--h2);
+    color: var(--text2);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px var(--shadow);
+    cursor: pointer;
+    padding: 1rem;
+    justify-content: flex-end;
+    display: inline-flex;
+    font-family: var(--font);
+    font-size: 1rem;
+}
+
+#den {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#quotes {
+    margin: 2rem 0;
+    background-color: var(--bg2);
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px var(--shadow);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#quotes select {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--bg);
+    color: var(--text);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+#task-section {
+    background: var(--bg);
+    padding: 2rem;
+    border-radius: var(--radius, 10px);
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+#task-input {
+    padding: 0.5rem;
+    width: 60%;
+    background-color: var(--bg);
+    border: 2px solid var(--border2);
+    caret-color: var(--text);
+    color: var(--text);
+}
+
+#add-task {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    background-color: var(--accent);
+    color: var(--text2);
+    border-radius: 5px;
+    border-style: none;
+}
+
+#task-list li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: var(--bg);
+    border-radius: 6px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#smoothie-game {
+    border: 2px ridge var(--border);
+    border-radius: 5px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px var(--shadow);
+    text-align: center;
+    margin: auto;
+}
+
+#reveal-btn {
+    border-style: none;
+    background-color: var(--accent);
+    color: var(--text2);
+    cursor: pointer;
+    padding: 1rem;
+    margin: 1.5rem;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: medium;
+}
+
+#ingredient-list {
+    border: 2px solid var(--border2);
+    cursor: pointer;
+    list-style-type: none;
+    padding-left: 0;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#ingredient-list li {
+    background-color: var(--bg2);
+    padding: 0.5rem 1rem;
+    margin: 0.5rem auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px var(--shadow);
+    transition: transform 0.2s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+#inbox {
+    border: 2px dashed var(--border2);
+    padding: 1rem;
+    margin: 2rem 0;
+    max-width: 700px;
+    background-color: var(--bg2);
+    border-radius: 8px;
+}
+
+#filter-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filter {
+    padding: 0.75rem 0.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+#urgent-list {
+    border: 5px dashed red;
+    border-radius: 8px;
+    background-color: var(--accent);
+    list-style: none;
+    padding: 1.5rem;
+    color: var(--text2);
+}
+
+#urgent-list li {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 1.1rem;
+}
+
+#urgent-list li:hover {
+    text-decoration: none;
+    transform: scale(1.02);
+    color: black;
+    font-weight: bold;
+}
+
+/* ========== Layout ========== */
+.navbar {
+    /* turns the list into a horizontal row using flexbox*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /*inline-flex*/
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar li a {
+    /*styles the links inside each list item */
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text3);
+    transition: all 0.3s ease-in-out;
+}
+
+.link-container {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--conspBg);
+    color: var(--conspLink);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px var(--shadow);
+    cursor: pointer;
+    letter-spacing: 0.05rem;
+    width: 50%;
+}
+
+.close-btn {
+    color: crimson;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+    transition: transform 0.2s ease;
+}
+
+.reset-btn {
+    background-color: var(--text3);
+    color: var(--bg2);
+    padding: 1rem 0.5rem;
+    margin: 0 auto;
+    border-style: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    margin-top: 2rem;
+    max-width: 100px;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    font-size: 0.9rem;
+    transition: font-size 0.3s ease;
+}
+
+.list-complete {
+    font-style: italic;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.message-card {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.message-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.message-card.eel-message {
+    background-color: var(--bg3);
+    border-left: 4px solid var(--border3);
+}
+
+/* ========== Components ========== */
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 1.2rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    resize: vertical;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    color: var(--label);
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+button[type="submit"] {
+    background-color: var(--h2);
+    color: var(--text2);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+
+/* ========== Hover / Animations ========== */
+
+li:hover {
+    color: var(--hoverLink);
+    /*text-decoration: underline;*/
+    font-weight: bold;
+}
+
+#tags li a:hover {
+    color: var(--hoverLink);
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border: 2px solid var(--border);
+}
+
+.form-group input:focus~label,
+/* element is currently selected */
+.form-group input:not(:placeholder-shown)~label,
+/* ~ selects the sibling label after the input, :placeholder-shown - input is still showing its placeholder*/
+.form-group textarea:focus~label,
+.form-group textarea:not(:placeholder-shown)~label {
+    top: 0.2rem;
+    font-size: 0.75rem;
+    color: var(--h2);
+}
+
+.navbar li a:hover {
+    /* adds a nice interactivity effect */
+    color: var(--h2);
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    transform: scale(1.3);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--hoverBtn);
+}
+
+.form-group option:focus~label,
+.form-group option:not(:placeholder-shown)~label,
+.form-group select:focus~label,
+.form-group select:not(:placeholder-shown)~label {
+    top: 0.2rem;
+    font-size: 0.75rem;
+    color: var(--h2);
+}
+
+.link-container:hover {
+    background-color: var(--conspLink);
+    color: var(--conspBg);
+}
+
+.link-container:focus {
+    /* for accessibility - keyboard focus */
+    outline: 2px solid var(--hoverText);
+    outline-offset: 3px;
+}
+
+
+#mood-checker select:hover,
+#mood-checker select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+}
+
+
+#compliment-btn:hover {
+    background-color: #eb94bf;
+    color: var(--text2);
+    transition: var(--transition);
+}
+
+body.hacker-mode::-webkit-scrollbar {
+    width: 6px;
+}
+
+body.hacker-mode::-webkit-scrollbar-thumb {
+    background-color: var(--hoverBtn);
+}
+
+body.hacker-mode .blinking-cursor::after {
+    content: '|';
+    animation: blink 1s steps(2, start) infinite;
+}
+
+#add-task:hover {
+    background-color: var(--hoverBtn);
+}
+
+#reveal-btn:hover {
+    background-color: var(--hoverBtn);
+}
+
+#ingredient-list li:hover {
+    transform: scale(1.03);
+    background-color: var(--hoverBtn);
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background-color: var(--hoverBtn);
+    font-size: 1rem;
+    transition: background-color 0.2s ease, font-size 0.2 ease;
+    max-height: 50px;
+}
+
+.close-btn:hover {
+    transform: scale(1.5);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+
+#hacker-toggle:hover {
+    background-color: var(--hoverBtn);
+}
+
+#quotes select:hover,
+#quotes select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+}
+
+
+/* ========== Media Queries ========== */
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+
+
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .navbar li a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+    }
+
+    #den {
+        flex-direction: column;
+        margin: 2rem;
+    }
+
+    #hacker-toggle {
+        margin: 2rem;
+    }
+
+    #eel-stats {
+        text-align: center;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        justify-items: center;
+        padding: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        border: 5px double var(--border);
+        border-radius: var(--radius);
+        background-color: var(--bg);
+        margin-bottom: 2rem;
+        margin-top: 0;
+
+    }
+
+    .stat {
+        background: var(--bg2);
+        padding: 1rem;
+        border-radius: 8px;
+        width: 180px;
+        text-align: center;
+        box-shadow: 0 2px 6px var(--shadow);
+
+
+    }
+
+    #quotes {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #quote {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem;
+    }
+
+    #reveal-btn {
+        margin: 1.5rem auto;
+    }
+
+
+}
+
+/* PC Monitors */
+@media (min-width: 1200px) {
+    .card-container {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        background-color: var(--bg);
+        border: 1px solid var(--border2);
+        border-radius: 8px;
+        padding: calc(1rem + 2vw);
+        width: calc(50% - 40px);
+        box-shadow: 0 4px 8px var(--shadow);
+        text-align: center;
+        transition: transform 0.2s ease;
+        min-width: 250px;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+
+
+    .card-title:hover {
+
+        color: var(--accent);
+    }
+
+    section #eel-stats {
+        text-align: center;
+
+    }
+
+    .stats {
+        display: inline-flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        text-align: center;
+
+    }
+
+    .stat {
+        background: var(--bg2);
+        padding: 1rem;
+        border: 2px inset var(--border2);
+        border-radius: 8px;
+        width: 160px;
+        text-align: center;
+        box-shadow: 0 2px 6px var(--shadow);
+    }
+
+}
+
+/* Tablet and PC Monitors */
+@media (min-width: 1000px) {
+    body {
+        padding: 3rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .stats {
+        display: block;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 2rem auto;
+        border: 5px double var(--border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        background-color: var(--bg);
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .stat {
+        background: var(--bg2);
+        padding: 1rem;
+        border-radius: 8px;
+        width: 180px;
+        text-align: center;
+        box-shadow: 0 2px 6px var(--shadow);
+        margin: 2rem;
+    }
+
+    .stat#er {
+        display: block;
+
+        margin: 2rem;
+    }
+
+    .stat#sr {
+        display: block;
+
+        margin: 0 auto;
+    }
+
+    .stat#siq {
+        display: block;
+
+        margin-left: auto;
+        margin-right: 2rem;
+    }
+}
+
+/* thanks loading page */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-family: monospace;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid var(--border2);
+    border-top: 6px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#fact-text {
+    font-size: 1.1em;
+}

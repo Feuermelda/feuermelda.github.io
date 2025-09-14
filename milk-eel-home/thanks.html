@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thank you | Milk & Eel</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <p id="fact-text"></p>
+    </div>
+    <div id="main-content">
+        <h1>Thank you for your message!</h1>
+        <p>Milk and Eel have received it and are preparing a response.</p>
+
+    </div>
+    <script>
+        const facts = [
+            "Milk is handwriting your receipt...",
+            "Eel is tail-typing your confirmation...",
+            "Transmitting message through sauce-based fiber...",
+            "Establishing contact with Dijonardo...",
+            "Sending coordinates to the vending machine...",
+            "Raccoons rewiring the network for message transfer...",
+            "Message bottled and floating toward the sauce realm...",
+            "Eel is decoding your message with his tail...",
+            "Milk is inspecting your message for condiment prints...",
+            "Bypassing the Cult of Condiments via Dijonardo's cryptographic hotline...",
+            "Sending message to the Mango Oracle..."
+        ];
+
+        const factText = document.getElementById("fact-text");
+        let interval = setInterval(() => {
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            factText.textContent = randomFact;
+        }, 2000);
+
+        // redirect after 5 seconds
+        setTimeout(() => {
+            clearInterval(interval);
+            window.location.href = "milk-eel-homepage.html";
+        }, 6000);
+
+    </script>
+
+</body>
+
+</html>

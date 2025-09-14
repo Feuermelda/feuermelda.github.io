@@ -1,0 +1,218 @@
+<!DOCTYPE html> <!--tells browser to use HTML5 mode, so it doesnt fall back into weird legacy quirks mode-->
+<html lang="en"> <!--super helpful for accessibility tools and search engines, primary language of the content-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Milk and Eel's web lair - digital explorers conquering HTML, CSS, and smoothies." />
+    <title>Milk & Eel - Web Adventurers</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <!--header vs div: div - generic container with no meaning, header - semantic, tells both humans and machines, this is the pages top section, get more context from it-->
+        <h1 class="blinking-cursor">Welcome to Our Web Lair</h1>
+        <!--most important headline on a page, only one per page-->
+        <h3 id="weekday">
+        </h3>
+        <p id="den">The digital den of Milk and Eel.
+            <button id="hacker-toggle">Enter Hacker Mode</button>
+        </p>
+
+        <nav>
+            <ul class="navbar">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#missions">Missions</a></li>
+                <li><a href="#tags">Tags</a></li>
+                <li><a href="eel-conspiracy.html">Conspiracy Wall</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <main> <!--holds the main content of the page-->
+        <section id="about"> <!--logical chunk-->
+            <h2>About Us</h2> <!--next-level heading under the h1-->
+            <p>We are Milk and Eel, digital explorers and part-time smoothie critics. Our mission is to conquer the web
+                - one well-indented tag at a time.</p>
+            <p id="greeting"></p>
+        </section>
+        <section id="skills">
+            <h2>Our Legendary Skills</h2>
+            <ul>
+                <li>HTML mastery (mostly)</li>
+                <li>CSS avoidance until necessary</li>
+                <li>JavaScript panic-handling</li>
+                <li>Running from the ketchup cult</li>
+            </ul>
+        </section>
+        <section id="missions">
+            <h2>Recent Missions</h2>
+            <ul>
+                <li>Time Travel via Vending Machine</li>
+                <li>Theme Park Adventure</li>
+                <li>Roadtrip to the ultimate Smoothie</li>
+                <li>Exploring Space (ongoing)</li>
+            </ul>
+        </section>
+        <section id="missions-cards" class="card-container">
+            <div class="card">
+                <h3 class="card-title">Time Travel</h3>
+                <p>Vending machine incident.</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Theme Park</h3>
+                <p>Cotton candy sabotage.</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Ultimate Smoothie</h3>
+                <p>Roadtrip in beat up RV.</p>
+        </section>
+        <section id="tags">
+            <h2>Favorite HTML Tags</h2>
+            <ul>
+                <li>&lt;section&gt; - for dramatic story breaks</li>
+                <!--&...; - HTML entity, used to display actual characters without the browser thinking youre starting a real HTML tag-->
+                <li>&lt;button&gt; - every click is a gamble</li>
+                <li>&lt;footer&gt; - save the best for last</li>
+                <li>&lt;script&gt; - No idea what that does</li>
+            </ul>
+        </section>
+        <section id="mood-checker">
+            <h2>Check Eel's Mood</h2>
+            <label for="mood">Choose mood:</label>
+            <select id="mood">
+                <option value="" disabled hidden selected>mood</option>
+                <option value="mischievous">Mischievous</option>
+                <option value="tired">Tired</option>
+                <option value="hyper">Hyper</option>
+                <option value="neutral">Neutral</option>
+            </select>
+            <p id="mood-response">Click a mood to find out what Eel is up to!</p>
+        </section>
+        <section id="eel-stats">
+            <h2>Eel's Stats</h3>
+                <div class="stats">
+                    <div class="stat" id="er">
+                        <h4>Escape Rate</h4>
+                        <p>96%</p>
+                    </div>
+                    <div class="stat" id="sr">
+                        <h4>Spicy Resistance</h4>
+                        <p>81%</p>
+                    </div>
+                    <div class="stat" id="siq">
+                        <h4>Smoothie IQ</h4>
+                        <p>205</p>
+                    </div>
+                </div>
+        </section>
+        <section id="quotes">
+            <h2>Choose a famous quote:</h2>
+            <select id="quote">
+                <option value="" disabled hidden selected>--Select a quote to find out who it's from--</option>
+                <option value="eel">"This chili is not as spicy as I thought. Wait...🔥"</option>
+                <option value="milk">"I thought it said Dairy and was for me.🥛"</option>
+                <option value="dijon">"The show mustard go on.💔"</option>
+            </select>
+            <p id="quote-display"></p>
+        </section>
+        <a href="eel-conspiracy.html" class="link-container">
+            <span class="conspiracy-link">View Eel's Conspiracy Wall</span></a>
+        <section id="task-section">
+            <h2>Milk & Eel's To-Do List</h2>
+            <input type="text" id="task-input" placeholder="What's the next chaotic thing to do?">
+            <button id="add-task">Add Task</button>
+            <ul id="task-list"></ul>
+        </section>
+        <section id="compliment">
+            <h2>Need a Compliment?</h2>
+            <button id="compliment-btn">Compliment me</button>
+            <p id="compliment-result">Click the button and let Eel flatter you.</p>
+        </section>
+        <section id="smoothie-game">
+            <h2>Reveal Smoothie Secrets</h2>
+            <button id="reveal-btn">Reveal Ingredient</button>
+            <ul id="ingredient-list"></ul>
+        </section>
+        <section id="inbox">
+            <h2>Milk's Inbox</h2>
+            <div id="filter-container">
+                <input type="text" id="filter" placeholder="Search inbox...">
+            </div>
+
+            <h3>Messages</h3>
+            <div id="messages-container">
+                <!-- Messages will appear here -->
+            </div>
+            <div id="sent">
+                <h3>Replies</h3>
+                <div id="sent-container">
+
+                </div>
+            </div>
+            <div id="urgent-zone">
+                <h3>Urgent Messages</h3>
+                <ul id="urgent-list"></ul>
+            </div>
+        </section>
+
+        <section id="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contact-form-group" action="https://formsubmit.co/feuermelda5733@gmail.com" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <!-- " " enables floating label technique -->
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit">Send Message</button>
+                <p id="contact-feedback" style="color: red; margin-top: 10px;"></p>
+                <input type="hidden" name="_captcha" value="false">
+
+            </form>
+        </section>
+        <section id="eelmergency">
+            <h2>Report an Eelmergency</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="person" placeholder=" " required>
+                    <label for="person">Who needs help?</label>
+                </div>
+                <div class=form-group>
+
+                    <select name="types" id="types" required>
+                        <option value="" disabled hidden selected>---Please select Type---</option>
+                        <option value="smoothie">Smoothie With Pickles</option>
+                        <option value="dijon">Dijonardo Fight</option>
+                        <option value="milk">Milk Gone</option>
+                        <option value="eel">Eel Trapped In SnakePit</option>
+                    </select>
+                    <label for="types">Type of Emergency</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="4" placeholder=" " required></textarea>
+                    <label for="message">Additional Details</label>
+                </div>
+                <button type="submit">Call for Help</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with 🥛 + 🐍 & just a bit of HTML magic.</p>
+        <p>&copy; 2025 Milk and Eel Industries</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

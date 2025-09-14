@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eel's Conspiracy Wall</title>
+    <link rel="stylesheet" href="conspiracy.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Eel's Conspiracy Wall</h1>
+        <p>Here are all secret Eel's notes related to certain conspiracies.</p>
+    </header>
+    <main class="conspiracy-wall">
+        <div class="item-grid">
+            <div class="item clue">Mango Sample #420</div>
+            <div class="item red-thread">Thread to Condiment HQ</div>
+            <div class="item photo">Blurry Photo of Dijonardo</div>
+            <div class="item unknown">Unknown Substance</div>
+            <div class="item note">Milk's scribbled note: "What if... the fry was never real?"</div>
+            <div class="item hidden-slot">Empty Slot</div>
+        </div>
+        <aside class="secret-compartment">
+            <div class="secret-title">Top Secret Files</div>
+            <div class="slot one">Folder A</div>
+            <div class="slot two">Folder B</div>
+            <div class="slot three">Unknown File</div>
+            <div class="revealable-note">Hover here for clue</div>
+        </aside>
+    </main>
+    <form>
+        <div class="access">
+            <input type="text" id="password" placeholder=" " required pattern="[0-9]{3}" title="Enter a 3-digit code">
+            <label for="password">Access Code</label>
+        </div>
+        <div class="tooltip">
+            <p>Hover me for a hint!</p>
+        </div>
+    </form>
+    <a href="milk-eel-homepage.html" class="conspiracy-link">Back to Homepage</a>
+</body>
+
+</html>

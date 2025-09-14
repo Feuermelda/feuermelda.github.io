@@ -1,0 +1,43 @@
+html:
+ <section id="dom-playground">
+            <div class="card">
+                <h3>Milk</h3>
+                <p class="quote">"What do you mean you are lactoseintolerant? It's 2025!</p>
+                <button class="reveal">Reveal Parent</button>
+            </div>
+            <div class="card">
+                <h3>Eel</h3>
+                <p class="quote">I once swam all the way to Japan. They eat eels!</p>
+                <button class="reveal">Reveal Sibling</button>
+            </div>
+        </section>
+
+
+js:
+// climb to parent
+const revealButtons = document.querySelectorAll(".reveal");
+
+revealButtons[0].addEventListener("click", () => {
+    const parentCard = revealButtons[0].parentNode;
+    console.log("Parent Card:", parentCard);
+});
+
+// jump to sibling
+revealButtons[1].addEventListener("click", () => {
+    const thisCard = revealButtons[1].parentNode;
+    const nextCard = thisCard.nextElementSibling;
+
+    if (nextCard) {
+        console.log("Next Sibling Card:", nextCard);
+    } else {
+        console.log("No sibling found.");
+    }
+});
+
+// access the first child element
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+    const title = card.children[0]; // h3 is the first child
+    console.log("Card Title:", title.innerText);
+});

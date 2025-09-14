@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #121212;
+    color: white;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #7a029e;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 3px #9d1fc4, 0 0 3px #9d1fc4;
+}
+
+.conspiracy-wall {
+    max-width: 100%;
+    display: grid;
+    /* turns .conspiracy-wall into a grid container, grid is for 2D row and column, flex is for 1D row or column */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* responsive layout with a minimum width of 200px per cell and auto-fitting as many as possible, 
+    repeat() - tells grid to repeat the column definition, 
+    auto-fit - fills as many columns as will fit based on container width,
+    minmax(200px, 1fr) - each column is at least 200px, and can grow up to one fraction 1fr of available space, 
+    This ensures a dynamic grid that auto-adjusts based on screen size, unline grid-template-columns: 1fr 1fr 1fr, which is fixed to exactly 3 columns*/
+    gap: 2rem;
+    /* space between items, smarter than using margin manually */
+    padding: 2rem;
+    grid-template-rows: auto auto;
+    background-color: #1e1e1e;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    overflow-x: hidden;
+    flex-wrap: wrap;
+}
+
+.item {
+    /* each item is styled like a pinned clue */
+    padding: 1rem;
+    border: 2px dashed #66f;
+    border-radius: 0.5rem;
+    background-color: #2a2a2a;
+    transition: transform 0.2s ease;
+    /* transition + transform - makes the items animate smoothly when hovered - subtle feedback = good UX */
+    cursor: pointer;
+    justify-content: center;
+    /* horizontal centering*/
+    height: 80px;
+    display: flex;
+    /* turns the note into a flex container*/
+    align-items: center;
+    /* vertical centering */
+    text-align: center;
+    /* option, useful for multi-line text */
+    box-shadow: 0 0 8px rgba(160, 120, 255, 0.1);
+}
+
+.item:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+a.conspiracy-link {
+    color: #06c3fd;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    display: flex;
+
+}
+
+a.conspiracy-link:hover {
+    color: #0379f0;
+}
+
+@media (max-width: 768px) {
+    .conspiracy-wall {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        grid-template-rows: auto auto;
+    }
+
+    .item {
+        font-size: 0.9rem;
+    }
+}
+
+.item-grid {
+    gap: 1rem;
+    margin: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    text-align: center;
+}
+
+.item.hidden-slot {
+    background-color: #222;
+    border-style: dashed;
+    color: #a26de0;
+    cursor: pointer;
+}
+
+
+
+
+.secret-compartment {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    /* defines two row heights, alternative grid-auto-rows - to control the size of these auto-generated rows if you dont use grid-template-rows */
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    background-color: #1e1e2f;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+
+    place-items: center;
+    /* centers every grid item */
+}
+
+.secret-title {
+    grid-column: 1 / -1;
+    /* spans both columns*/
+    /* named grid lines for clarity, grid-area could also define areas instead of columns */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #bdaeff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.slot {
+    background-color: #292946;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #d3d3f1;
+    box-shadow: 0 0 12px rgba(160, 120, 255, 0.25);
+    text-align: center;
+    width: 120px;
+    cursor: pointer;
+}
+
+.slot.one {
+    grid-column: 1;
+}
+
+.slot.two {
+    grid-column: 2;
+}
+
+.slot.three {
+    grid-column: 1 / -1;
+    /* explicit grid */
+    /* explicit layout usage */
+    margin: 1rem auto;
+    /* used on slot three to center it */
+    /* layout polish trick */
+    text-align: center;
+}
+
+/* Hover-reveal pseudo-class */
+.revealable-note {
+    color: #888;
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 1px dashed #666;
+    border-radius: 0.5rem;
+}
+
+.revealable-note::after {
+    /* reveals a hidden clue. Pseudo-class */
+    content: "Ingredient: Psychic Papaya";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.revealable-note:hover::after {
+    opacity: 1;
+}
+
+form {
+    max-width: 500px;
+    margin: 1.5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+
+
+}
+
+.access {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.access input {
+    width: 100%;
+    padding: 1.2rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    border: 2px solid blueviolet;
+    border-radius: 6px;
+    resize: vertical;
+    background-color: #bdb7c2;
+}
+
+.access label {
+    position: absolute;
+    top: 1.7rem;
+    left: 0.5rem;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.2s ease;
+
+}
+
+.access input:focus~label,
+.access input:not(:placeholder-shown)~label {
+    top: 0.9rem;
+    font-size: 0.75rem;
+    color: #66f;
+
+}
+
+.access input:focus~label::after {
+    content: "Secret";
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    background-color: #5931b8;
+    color: #fff;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+
+
+.access input:focus {
+    border: 3px solid #7d00e4;
+}
+
+.access input:invalid {
+    color: red;
+}
+
+.tooltip {
+    border: 2px dashed #a26de0;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+
+}
+
+.tooltip::after {
+
+    content: "It's Eel's favorite number and Milk's favorite snack.";
+    position: absolute;
+    top: 82%;
+
+    transform: translateX(-4%);
+    background-color: #3c08b4;
+    color: #fff;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}
