@@ -1,0 +1,170 @@
+/* gold: #c1960e
+mahagony: #832f2f
+burgundy: #811c1c
+accents: #030725
+
+main bg: #e4c27a
+primary header: #821c1c or #661010
+subheader/highlight: #a13131
+accent/links/details: #030725
+text (body): #2b1d0e or dark brown
+borders/dividers: #030725 or semi-transparent black
+*/
+
+:root {
+    --details: #030725;
+    --bg: #f7e2cb;
+    --thead: #e4c27a;
+    --tbody: #fdf3dd;
+    --bg-body: ;
+    --bg-html: #f1e5c1;
+    --font-family: 'Segoe UI', 'Verdana', sans-serif;
+    --text: #2b1d0e;
+    --radius: 10px;
+    --shadow: rgba(3, 7, 37, 0.2);
+    --h1: #821c1c;
+    --h2: #a13131;
+    --h3: #ba5232;
+    --card-bg: #ffe1aa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--bg-html);
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--bg);
+    color: var(--text);
+    margin: 2rem auto;
+    height: 100%;
+    width: 880px;
+    max-width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--details);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 4px
+}
+
+h1 {
+    color: var(--h1);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--h2);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--h3);
+    font-size: 1.25rem;
+
+}
+
+.header-img {
+    width: 100%;
+    max-width: 600px;
+    object-fit: contain;
+    margin: 2rem auto;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    max-height: 650px;
+    box-shadow: 0 1px 4px var(--shadow);
+    border: 2px none;
+    border-radius: var(--radius);
+}
+
+.traits {
+    text-align: start;
+}
+
+/* Profile Cards */
+
+.card-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.card {
+    background-color: var(--tbody);
+    border: 2px solid var(--details);
+    /* 1e4612 */
+    border-radius: 10px;
+    padding: 2rem;
+    width: calc(45% - 1.5rem);
+    box-shadow: 0 1px 4px var(--shadow);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.card-img {
+    width: 100%;
+    max-width: 400px;
+    object-fit: contain;
+    max-height: 500px;
+    box-shadow: 0 1px 4px var(--shadow);
+    border-radius: var(--radius);
+    margin: 2rem auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.card-img:hover {
+    transform: scale(1.05);
+}
+
+.index-link {
+    color: #8d0000;
+    text-decoration: none;
+}
+
+.index-link:hover {
+    color: #665c23;
+}
+
+
+/* Growth Table */
+
+.kitten-growth {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background-color: var(--bg);
+    color: var(--details);
+    border: 2px solid var(--details);
+    box-shadow: 0 2px 6px rgba(3, 7, 37, 0.2);
+}
+
+.kitten-growth th,
+.kitten-growth td {
+    border: 1px solid var(--details);
+    padding: 0.8rem 1rem;
+    text-align: center;
+}
+
+.kitten-growth thead {
+    background-color: var(--thead);
+    color: var(--details);
+}
+
+.kitten-growth tbody tr:nth-child(odd) {
+    background-color: var(--tbody);
+}

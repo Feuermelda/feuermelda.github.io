@@ -285,6 +285,12 @@ select {
     margin-bottom: 0.25rem;
 }
 
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: var(--bg);
+    cursor: pointer;
+}
 
 /* ========== Components ========== */
 form {
@@ -434,7 +440,7 @@ html.eyebleach-firefox {
 /* ========== Media Queries ========== */
 
 /* Mobile Adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     .card-container {
         flex-direction: column;
@@ -461,7 +467,7 @@ html.eyebleach-firefox {
     .navbar li a {
         display: block;
         padding: 0.5rem 0;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .navbar {
@@ -491,6 +497,27 @@ html.eyebleach-firefox {
         display: block;
         text-align: center;
         margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #3b2f2f;
+        width: 100%;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        padding: 1rem;
+        border: 2px solid var(--border);
+        border-radius: var(--radius);
+    }
+
+    .navbar.active {
+        display: flex;
     }
 
 }

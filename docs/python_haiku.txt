@@ -1,0 +1,4 @@
+Python Haiku:
+Look up Keys in dict,
+loops shaped like 'lil curly fries,
+beware of the snake.
