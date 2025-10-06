@@ -168,3 +168,47 @@ h3 {
 .kitten-growth tbody tr:nth-child(odd) {
     background-color: var(--tbody);
 }
+
+@media (max-width: 768px) {
+
+    body {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 880px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .card-img {
+        max-height: 300px;
+
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    .kitten-growth {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 500px;
+        /* prevents squishing */
+    }
+
+}
