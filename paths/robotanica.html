@@ -16,6 +16,156 @@
             force hidden, but impact clear,<br>
             I cannot withstand
         </p>
+        <h2>Electronics & Embedded Basics - grown inside a robot eel</h2>
+
+        <section>
+            <h3>Introduction</h3>
+            <p>
+                RoBotanica is my electronics + microcontroller learning path built around one real robot:
+                <b>Eelbert</b><br>
+                Instead of random tutorials, every theory week is tied to something physical: power, LEDs, sensors,
+                motors, and safe switching.<br>
+                The goal is simple: understand electronics deeply enough to design, debug, and iterate real builds - not
+                just copy wiring diagrams.
+            </p>
+        </section>
+
+        <section>
+            <h3>Topics Covered</h3>
+            <ul>
+                <li>
+                    <h4>Week 1: Voltage, Current, Resistance</h4>
+                    <span>What flows through wires, what voltage really means, and how resistance controls it</span><br>
+                    <span><i>Used in Eelbert:</i> Battery powering LEDs, Arduino, and sensor-why wires “carry” energy
+                        and not just numbers</span>
+                </li>
+                <li>
+                    <h4>Week 2: Ohm’s Law Deep Dive</h4>
+                    <span>How voltage, current, and resistance relate (V = IR); calculating safe resistor
+                        values</span><br>
+                    <span><i>Used in Eelbert:</i> Resistor selection for LED eyes so they don’t burn out or go
+                        dim</span>
+                </li>
+                <li>
+                    <h4>Week 3: Capacitors & Charging Curves</h4>
+                    <span>How capacitors store/release energy, and how they create timing with resistors
+                        AC/DC</span><br>
+                    <span><i>Used in Eelbert:</i> Timing circuits for future upgrades (like blinking patterns or power
+                        smoothing)</span>
+                </li>
+                <li>
+                    <h4>Week 4: Transistors & Switching</h4>
+                    <span>How small signals control larger power-transistor as a gate or amplifier</span><br>
+                    <span><i>Used in Eelbert:</i> Optional LED animation upgrades; future Eelbert mods like sound or
+                        motor power switching</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Topics Left</h3>
+            <ul>
+                <li>
+                    <h4>Week 5: PWM & Analog Illusions</h4>
+                    <span>Why analogWrite isn’t really analog; simulating smooth behavior with pulses</span><br>
+                    <span><i>Used in Eelbert:</i> Servo control-how a fake “analog” signal tells Eelbert’s tail how far
+                        to move</span>
+                </li>
+                <li>
+                    <h4>Week 6: Power Supply Theory</h4>
+                    <span>Battery chemistry, voltage regulation, current draw, why things get hot</span><br>
+                    <span><i>Used in Eelbert:</i> TP4056 heating, battery charging behavior, USB vs LiPo power, when
+                        things go unstable</span>
+                </li>
+                <li>
+                    <h4>Week 7: Microcontrollers 101</h4>
+                    <span>What’s inside the Arduino Nano: CPU, flash, pins, serial, I²C, power rails</span><br>
+                    <span><i>Used in Eelbert:</i> Understanding VIN, GND, I²C sensor pins (VL53L0X), digital vs analog
+                        outputs</span>
+                </li>
+                <li>
+                    <h4>Week 8: Signals & Noise</h4>
+                    <span>What noise is in electronics; how long wires, poor contact, or bad layout causes
+                        issues</span><br>
+                    <span><i>Used in Eelbert:</i> VL53L0X sensitivity, flaky jumper wires, need for strong solder or
+                        insulation</span>
+                </li>
+                <li>
+                    <h4>Week 9: Schematics & Symbols</h4>
+                    <span>How to read electronics diagrams and translate them to real builds</span><br>
+                    <span><i>Used in Eelbert:</i> Interpreting the TP4056 pinout, drawing Eelbert’s internal map,
+                        planning future upgrades</span>
+                </li>
+                <li>
+                    <h4>Week 10: System Integration</h4>
+                    <span>How to analyze a full system for power, logic, timing, and interaction</span><br>
+                    <span><i>Used in Eelbert:</i> Putting together battery + switch + Arduino + sensor + servo + LEDs
+                        without frying anything</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Build Focus: Eelbert</h3>
+            <div>
+                <p>
+                    Hardware elements explored during the path:
+                </p>
+                <ul>
+                    <li>Arduino Nano (logic + control)</li>
+                    <li>Two LED eyes (with safe resistor sizing)</li>
+                    <li>Servo-driven tail (motion via PWM)</li>
+                    <li>I²C proximity sensor (VL53L0X)</li>
+                    <li>9V battery + TP4056 charging module + on/off switch</li>
+                    <li>Safe switching & protection (transistors/MOSFETs, flyback diode concepts, decoupling capacitors)
+                    </li>
+                </ul>
+                <p>
+                    Week 1–4 are completed;<br>
+                    the next phase is finishing a clean, soldered “skeleton” and then
+                    designing
+                    the cutesy shell in TinkerCad and 3D-printing it.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Mini-Projects Inspired by RoBotanica</h3>
+            <div>
+                <ul>
+                    <li><b>Battery Whisperer</b> - a high-resistance voltage measurement circuit (voltage divider + safe
+                        probing).</li>
+                    <li><b>555 Timer Oscillator</b> - square waves, duty cycle experiments, and timing intuition.</li>
+                    <li><b>Battery Vampire (Joule Thief)</b> - harvesting the last “bite” of energy from nearly-dead
+                        batteries.</li>
+                    <li><b>Harmonic Oscillator (LC)</b> - resonance, ringing, and waveform exploration with an
+                        oscilloscope.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h3>Outcome</h3>
+            <p><i>In progress.</i><br>
+                By the end of RoBotanica, I’ll be comfortable reading schematics, choosing parts intentionally (not by
+                vibes), and
+                integrating power + logic + sensors + actuators into a stable real-world build.
+            </p>
+        </section>
+
+        <section>
+            <h3>Deep Dive (later)</h3>
+            <div>
+                <ul>
+                    <li>PCB design (KiCad) and proper grounding/layout</li>
+                    <li>Power path planning (buck/boost converters, battery protection, brownout behavior)</li>
+                    <li>Noise & measurement (scope probing, filtering, debouncing)</li>
+                    <li>MOSFET selection, gate driving, and efficiency</li>
+                    <li>EMI and motor/servo best practices</li>
+                </ul>
+            </div>
+        </section>
+
     </header>
     <div>
         <a href="../index.html" class="index">Back to home</a>

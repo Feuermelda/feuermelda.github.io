@@ -16,6 +16,128 @@
             the jump will decide your fate,<br>
             assemble in bin
         </p>
+        <h2>Low-Level Logic & Poetic Processors</h2>
+        <section>
+            <div>
+                <h3>Introduction</h3>
+                <p>
+                    In a world abstracted by high-level languages, I chose to speak directly to the machine.
+                    This path is a journey into Assembly - where every byte counts, the stack is sacred, and
+                    registers
+                    obey only precision.<br>
+                    From syscall invocations to the secrets of the stack, I began understanding how computers truly
+                    operate under the hood.<br>
+                    It's not just programming - it's communion with the processor.
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3>Topcis Covered</h3>
+            <ul>
+                <li>
+                    <h4>Week 1: The Machine's Alphabet</h4>
+                    <span>Binary, hexadecimal, memory layout, how registers and RAM speak in their native tongue.</span>
+                </li>
+                <li>
+                    <h4>Week 2: MOV - Speaking Softly</h4>
+                    <span>Data movement between registers and memory, addressing, and hex practice.</span>
+                </li>
+                <li>
+                    <h4>Week 3: ADD, SUB, INC, DEC</h4>
+                    <span>Arithmetic instructions, CPU flags, and how the processor handles basic math.</span>
+                </li>
+                <li>
+                    <h4>Week 4: The Flow of Control</h4>
+                    <span>Unconditional and conditional jumps (<code>JMP</code>, <code>JE</code>, <code>JG</code>,
+                        <code>JL</code>), label usage, control flow
+                        logic.</span>
+                </li>
+                <li>
+                    <h4>Week 5: Logic Behind the Logic</h4>
+                    <span><code>AND</code>, <code>OR</code>, <code>XOR</code>, <code>NOT</code>, and bitmask
+                        operations</span>
+                </li>
+                <li>
+                    <h4>Week 6: The Stack Ritual</h4>
+                    <span>Stack frames with <code>rbp</code>, local variables, function calling with
+                        <code>CALL</code>/<code>RET</code>, pushing and
+                        popping multiple values</span>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Topics Left</h3>
+            <ul>
+                <li><b>Week 7: Loops & Counters</b> - <code>LOOP</code>, <code>CX</code>, memory iteration</li>
+                <li><b>Week 8: Memory Access Mastery</b> - Pointers, direct vs indirect memory access</li>
+                <li><b>Week 9: Hello, Ports</b> - Memory-mapped I/O, intro to port-based interactions</li>
+                <li><b>Week 10: Debugging the Void</b> - Step-through debugging, flags/register tracing</li>
+                <li><b>Week 11: The Inner Loop</b> - Custom mini assembly program</li>
+                <li><b>Week 12: Final Challenge & Reflection</b> - Review, final quiz, reflection log</li>
+                <li><b>Bonus Track: The Temple Gate</b> - Temple OS & HolyC</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Outcome</h3>
+            <p><i>To be filled upon completion.</i><br>
+                By the end, I'll be able to write functioning low-level programs, debug at instruction level, and
+                develop an intuition for how CPUs truly operate.</p>
+        </section>
+        <section>
+            <h3>Project Gallery</h3>
+            <ul>
+                <li>
+                    <a href="https://github.com/Feuermelda/assembly-machine-whisperer/blob/main/week_04/first.asm">First
+                        Steps in Assembly</a> <!--first.asm week 3 or 4 -->
+                    <p>My very first Assembly script! Used a basic write syscall to print "Hello" to stdout.</p>
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/Feuermelda/assembly-machine-whisperer/blob/main/week_04/compare_and_jump.asm">Compare
+                        & Jump</a> <!--compare_and_jump.asm week 4-->
+                    <p>Demonstrates basic comparisions and conditional branching using registers.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/Feuermelda/assembly-machine-whisperer/blob/main/week_04/tinyjudge.asm">Tiny
+                        Judge</a> <!--tinyjudge.asm week 4-->
+                    <p>uses comparision and conditional jumps to simulate a tiny decision-maker</p>
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/Feuermelda/assembly-machine-whisperer/blob/main/week_05/robot_status_handler.asm">Robot
+                        Status Handler</a> <!--robot_status_handler.asm week 4 or 5-->
+                    <p>Early attempt at using stack/logic instructions to simulate simple robot status checking and
+                        branching.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/Feuermelda/assembly-machine-whisperer/blob/main/week_06/ritual.asm">Ritual
+                        Summon</a> <!--ritual.asm Week 6-->
+                    <p>syscall invocation & string printing</p>
+                </li>
+                <li>
+                    <a href="https://github.com/Feuermelda/assembly-machine-whisperer/blob/main/week_06/bless.asm">Bless
+                        the Stack</a> <!--bless.asm week 6-->
+                    <p>push/pop values and build custom stack frames</p>
+                </li>
+                <li>
+                    <a href="https://github.com/Feuermelda/assembly-machine-whisperer/blob/main/week_06/solo.asm">Solo
+                        Stack Test</a> <!--solo.asm week 6-->
+                    <p>pop two values into registers, print using syscall, set exit code
+                        manually</p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Deep Dive</h3>
+            <p>Planned future explorations:</p>
+            <ul>
+                <li>Writing my own <code>malloc</code> using <code>sbrk</code></li>
+                <li>Mixing C and Assembly</li>
+                <li>Safe shellcode crafting</li>
+                <li>reverse engineering ELF binaries</li>
+                <li>TempleOS and the divine design of HolyC</li>
+            </ul>
+        </section>
     </header>
     <div>
         <a href="../index.html" class="index">Back to home</a>
